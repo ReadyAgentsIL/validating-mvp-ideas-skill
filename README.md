@@ -1,6 +1,9 @@
-# validating-mvp-ideas — a cross-IDE AI skill
+# validating-mvp-ideas — cross-IDE AI skills
 
-A rigorous **pre-MVP idea validation** skill for AI coding agents. Before you build anything, it runs your idea through a hard market filter using (parallel) research — so you kill bad ideas in minutes instead of wasting weeks of build + months of failed launch.
+Two rigorous **pre-MVP** skills for AI coding agents:
+
+- **`validating-mvp-ideas`** — you HAVE an idea: it runs it through a hard market filter using (parallel) research, so you kill bad ideas in minutes instead of wasting weeks of build + months of failed launch.
+- **`hunting-mvp-ideas`** — you WANT an idea: a loop engine that generates candidates, screens them cheaply, escalates only survivors to full validation, remembers every rejected idea in a ledger, and stops at your budget cap or the first GO.
 
 Works on **Claude Code, Codex, Cursor, Windsurf, Google Antigravity, Gemini CLI, and any agent that takes custom instructions.**
 
@@ -23,8 +26,8 @@ When you propose a product/SaaS idea or ask "should I build this," the skill:
 
 ## Install — paste this into your AI agent (any IDE)
 
-> Install the AI skill at `https://github.com/ReadyAgentsIL/validating-mvp-ideas-skill`. Clone or fetch it, read its README, and set it up the correct way for whatever IDE/agent I'm using:
-> - **Claude Code** → copy the `validating-mvp-ideas` folder into `~/.claude/skills/`
+> Install the AI skills at `https://github.com/ReadyAgentsIL/validating-mvp-ideas-skill`. Clone or fetch it, read its README, and set it up the correct way for whatever IDE/agent I'm using:
+> - **Claude Code** → copy the `validating-mvp-ideas` AND `hunting-mvp-ideas` folders into `~/.claude/skills/`
 > - **Codex / Cursor / Windsurf** (anything using `AGENTS.md`) → merge this repo's `AGENTS.md` into my global or project `AGENTS.md`, and keep `PROMPT.md` alongside it
 > - **Anything else** (Antigravity, Gemini CLI, etc.) → save `PROMPT.md` wherever that tool loads custom rules/instructions/memory
 >
@@ -36,9 +39,10 @@ Your agent reads the README and installs the right format for its own platform.
 
 | File | For |
 |---|---|
-| `validating-mvp-ideas/SKILL.md` | **Claude Code** native skill (auto-triggers, spawns parallel agents) |
+| `validating-mvp-ideas/SKILL.md` | **Claude Code** native skill — validate ONE idea deeply (auto-triggers, parallel agents) |
+| `hunting-mvp-ideas/SKILL.md` | **Claude Code** native skill — loop to FIND an idea (funnel + ledger + budget cap) |
 | `AGENTS.md` | **Codex / Cursor / Windsurf** and other `AGENTS.md`-based agents |
-| `PROMPT.md` | **Universal** — paste into any agent as a custom rule/instruction |
+| `PROMPT.md` | **Universal** — paste into any agent as a custom rule/instruction (covers both modes) |
 
 > Note: only Claude Code gets full auto-trigger + parallel-agent speed. On other IDEs the agent follows the same logic, running the research sequentially (or with that tool's own multi-agent feature, if it has one).
 
@@ -48,10 +52,11 @@ Your agent reads the README and installs the right format for its own platform.
 
 You don't run a command — just talk to your agent. It triggers when you do any of these:
 
-- "I have an idea: **[your idea]**. Should I build it?"
-- "Validate this idea before I build it: **[idea]**"
-- "Is there a market / real demand for **[idea]**?"
-- "Research the competition for **[idea]**."
+- "I have an idea: **[your idea]**. Should I build it?" → *validator*
+- "Validate this idea before I build it: **[idea]**" → *validator*
+- "Is there a market / real demand for **[idea]**?" → *validator*
+- "**Find me** a SaaS idea worth building" → *hunter*
+- "Loop until you find a GO-rated idea in **[domain]**" → *hunter*
 
 The agent will then ask you the 3 setup questions (how many agents, which model, how deep), run the research, and hand you a **GO / CONDITIONAL-GO / NO-GO** verdict with a scorecard.
 

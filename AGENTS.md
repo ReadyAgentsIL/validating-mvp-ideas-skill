@@ -9,4 +9,6 @@
 3. Run the research expedition (competitors, demand, buyer pain, willingness-to-pay, feasibility, legal/platform risk, bear case). Require 2+ sources and a confidence rating per claim; reserve a final red-team pass.
 4. Deliver a GO / CONDITIONAL-GO / NO-GO verdict with a scorecard, the biggest kill risk, and what evidence would change it.
 
+**When the user has NO idea and asks you to FIND one** ("find me an idea", "hunt for a niche"), use PROMPT.md's Hunting mode: ask for hunting ground + a hard budget cap, keep `mvp-hunt-ledger.md` (read before generating, write after every verdict), screen candidate batches cheaply, and escalate at most one survivor per round to the full validation.
+
 Full details: see `PROMPT.md`.

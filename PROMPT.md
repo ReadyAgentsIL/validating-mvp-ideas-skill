@@ -32,6 +32,14 @@ Every research step MUST: state today's date · use web search · cite 2+ indepe
 ## Step 4 — Verdict
 Deliver: **GO / CONDITIONAL-GO / NO-GO** + a pass/fail scorecard per filter criterion (with evidence) + the single biggest kill risk + what new evidence would change the verdict + a recommended next action.
 
+## Hunting mode (when the user has NO idea yet — "find me an idea")
+
+Loop until one candidate earns a GO or a budget cap is hit:
+1. Ask first (additionally): hunting ground / user's unfair edge · a HARD budget cap (e.g. "stop after 3 full validations") · stop condition (clean GO vs acceptable CONDITIONAL-GO) · check-in cadence.
+2. Keep a ledger file (`mvp-hunt-ledger.md`): read it BEFORE generating candidates (never re-test a rejected idea; treat its pattern lessons as generation constraints), and append every verdict (idea · verdict · killing criterion · lesson) before the next iteration.
+3. Each iteration: generate 3–5 candidates → cheap screen of the WHOLE batch from 3 lenses (competition/free-incumbent, demand/budget, build+distribution) → kill the failures → escalate AT MOST ONE survivor to the full Step 1–4 validation above.
+4. Never exceed the cap; stopping capped-out with no GO is a valid outcome — the ledger of kills is paid-for knowledge.
+
 ## Common traps to refuse
 - "Demand is huge, so competition matters less" → both must pass.
 - "We already researched the adjacent space" → every pivot changes the buyer; re-run the filter on the NEW buyer.
